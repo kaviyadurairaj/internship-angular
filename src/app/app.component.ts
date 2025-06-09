@@ -1,12 +1,31 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule, NgForm } from '@angular/forms';
+import { RouterModule, Router } from '@angular/router';
+import { EventService } from './event.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [FormsModule, CommonModule, RouterModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'myapp';
+  heading = 'EVENT TRACKER';
+  eventTitle = '';
+  eventDate = '';
+  
+  constructor(private router: Router, public eventService: EventService) {}
+
+  addevent(form: NgForm) {
+    if (form.valid) {
+      this.eventService.addEvent(this.eventTitle, this.eventDate);
+      form.reset();
+    }
+  }
+
+  gotocalender() {
+    this.router.navigate(['/calendar']);
+  }
 }
