@@ -1,8 +1,17 @@
-<h2 style="text-align: center;">EVENT CALENDER</h2>
-<div style="display: block">
-      <mwl-calendar-month-view
-        [viewDate]="viewDate"
-        [events]="events">
-      </mwl-calendar-month-view>
-    </div>
-<button routerLink="/" style="background-color:beige;border-radius: 5px; height: 50px; margin-left: 10px;">go back</button>
+<h2 style="text-align: center;">
+  EVENT CALENDAR 
+  <button routerLink="/" style="background-color: beige; border-radius: 5px; height: 50px; margin-left: 10px;">go back</button>
+</h2>
+
+<div style="text-align: center; margin: 10px;">
+  <button (click)="previousMonth()">Previous</button>
+  <strong style="margin: 0 15px;">{{ viewDate | date: 'MMMM yyyy' }}</strong>
+  <button (click)="nextMonth()">Next</button>
+</div>
+
+<div style="display: block;">
+  <mwl-calendar-month-view
+    [viewDate]="viewDate"
+    [events]="events">
+  </mwl-calendar-month-view>
+</div>

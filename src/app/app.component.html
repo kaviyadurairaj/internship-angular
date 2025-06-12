@@ -18,7 +18,7 @@
       <th>Event </th>
       <th>Date</th>
     </tr>
-    <tr *ngFor="let event of eventService.getEvents()">
+    <tr *ngFor="let event of event.getEvents()">
 
       <td>{{ event.title }}</td>
       <td>{{ event.start | date:'yyyy-MM-dd' }}</td>
