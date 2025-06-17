@@ -3,9 +3,16 @@
   background-color: antiquewhite;
   border: 2px solid black;
   padding: 15px;
-  width: 350px;
+  width: 300px;
   margin: auto;
   border-radius: 8px;
+  
+}
+.event{
+  width: 300px;
+}
+.date{
+  width: 300px;
 }
 
 
@@ -13,24 +20,37 @@ label {
   display: block;
   margin-top: 10px;
 }
-
-input {
-  width: 100%;
-  padding: 5px;
-  margin-top: 5px;
-  margin-bottom: 10px;
+mat-form-field{
+  height: 80px;
+  
 }
 
 
-button {
+
+.center-bt1{
+  display: flex;
+  justify-content: center;
+}
+.bt1 {
   padding: 8px 12px;
   border-radius: 4px;
   cursor: pointer;
-  margin-left: 10px;
+
+}
+.center-bt2{
+  display: flex;
+  justify-content: center;
+
+}
+.bt2{
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+
 }
 
 button:hover {
-  background-color: bisque;
+  background-color: aliceblue;
 }
 
 h2 {

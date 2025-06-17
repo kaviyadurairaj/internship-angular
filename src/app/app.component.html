@@ -2,15 +2,18 @@
   <h1 style="text-align: center">{{ heading }}</h1>
 </header>
 <br>
-
 <form #eventForm="ngForm" (ngSubmit)="addevent(eventForm)" class="form">
-  <label for="title">Enter event:</label>
-  <input type="text" id="title" name="title" [(ngModel)]="eventTitle" /><br /><br>
-
-  <label for="date">Enter Date:</label>
-  <input type="date" id="date" name="date" [(ngModel)]="eventDate" /><br /><br>
-
-  <button type="submit">Submit</button>
+  <mat-form-field appearance="fill" class="event">
+  <mat-label>Enter event:</mat-label>
+  <input matInput type="text" id="title" name="title" [(ngModel)]="eventTitle" />
+   </mat-form-field>
+   <mat-form-field appearance="fill" class="date">
+  <mat-label >Enter Date:</mat-label>
+  <input matInput  type="date" id="date" name="date" [(ngModel)]="eventDate" />
+  </mat-form-field>
+<div class="center-bt1">
+  <button mat-raised-button type="submit" class="bt1">Submit</button>
+  </div>
 </form>
 <h2 style="text-align: center;">ALL EVENTS</h2>
 <table class="table">
@@ -25,4 +28,7 @@
 
     </tr>
 </table>
-<button (click)="gotocalender()" style="background-color: antiquewhite;color: black;border-radius: 5px;border-color: black;">show calendar</button>
+<div class="center-bt2">
+<button  (click)="gotocalender()" class="bt2">show calendar</button>
+</div>
+<mat-slide-toggle [(ngModel)]="istoggled" (change)="pageTheme()">change background!</mat-slide-toggle>

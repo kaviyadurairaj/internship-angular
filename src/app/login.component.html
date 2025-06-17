@@ -1,0 +1,14 @@
+<h1 style="text-align: center;">LOGIN PAGE</h1>
+<div class="login">
+<form #loginForm="ngForm" (ngSubmit)="loginacc(loginForm)">
+    <mat-form-field appearance="fill" class="input">
+    <mat-label>Email: </mat-label>
+    <input matInput type="email" id="Email" name="Email" [(ngModel)]="Email" required="">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="input2">
+    <mat-label>Password:</mat-label>
+    <input matInput type="password" id="Password" name="Password" [(ngModel)]="Password" required=""><br>
+    </mat-form-field>
+    <button mat-raised-button type="submit">Login</button>
+</form>
+</div>

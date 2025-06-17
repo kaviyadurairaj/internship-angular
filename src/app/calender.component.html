@@ -1,15 +1,16 @@
 <h2 style="text-align: center;">
   EVENT CALENDAR 
-  <button routerLink="/" style="background-color: beige; border-radius: 5px; height: 50px; margin-left: 10px;">go back</button>
+  <button routerLink="/app-root" style="background-color: beige; border-radius: 5px; height: 50px; margin-left: 10px;">go back</button>
+
 </h2>
 
 <div style="text-align: center; margin: 10px;">
-  <button (click)="previousMonth()">Previous</button>
+  <button (click)="previousMonth()" mat-raised-button color="primary">Previous</button>
   <strong style="margin: 0 15px;">{{ viewDate | date: 'MMMM yyyy' }}</strong>
-  <button (click)="nextMonth()">Next</button>
+  <button (click)="nextMonth()" mat-raised-button color="primary">Next</button>
 </div>
 
-<div style="display: block;">
+<div style="display: block;max-height: 400px;">
   <mwl-calendar-month-view
     [viewDate]="viewDate"
     [events]="events">
